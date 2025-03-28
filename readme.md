@@ -39,12 +39,17 @@ Here's the exercice : by using stream function and lambda expression,
 make all part labelled as "RimFront" or "RimRear" or "TireRubberFront" to rotate.
 
 A clue :
-```RotateTransition rt = new RotateTransition(Duration.seconds(1), parts);
-rt.setCycleCount(Integer.MAX_VALUE);
-rt.setAxis(Rotate.X_AXIS);
-rt.setByAngle(360);
-rt.setInterpolator(Interpolator.LINEAR);
-rt.play();
+```
+private void setInMotion(Node parts){
+            RotateTransition rt = new RotateTransition();
+            rt.setCycleCount(Integer.MAX_VALUE);
+            rt.setAxis(Rotate.X_AXIS);
+            rt.setByAngle(360);
+            rt.setInterpolator(Interpolator.LINEAR);
+            rt.setNode(parts);
+            rt.setDuration(new Duration(1000));
+            rt.play();
+        }
 ```
 
 Good luck !
